@@ -31,8 +31,8 @@ public:
 		itPrevEnd--;
 		itPrevBegin--;
 
-		if (itPrevEnd->second != val) m_map.insert(itEnd, std::make_pair(keyEnd, itPrevEnd->second));
-		if (itPrevBegin->second != val) m_map.insert(itBegin, std::make_pair(keyBegin, val));
+		if (!(itPrevEnd->second == val)) m_map.insert(itEnd, std::make_pair(keyEnd, itPrevEnd->second));
+		if (!(itPrevBegin->second == val)) m_map.insert(itBegin, std::make_pair(keyBegin, val));
 
 		typename std::map<K, V>::iterator beginErase, endErase;
 		beginErase = endErase = m_map.upper_bound(keyBegin);
@@ -55,18 +55,18 @@ public:
 
 int main()
 {
-	/*map<int, string> myMap;
-	map<int, string>::iterator it = myMap.end();
-	myMap.insert(it, pair<int, string>(1, "b"));
-	myMap.insert(it, pair<int, string>(6, "n"));
-	myMap.insert(it, pair<int, string>(3, "l"));
-	myMap.insert(it, pair<int, string>(9, "k"));
-	myMap.insert(it, pair<int, string>(4, "g"));
+	//map<int, string> myMap;
+	//map<int, string>::iterator it = myMap.end();
+	//myMap.insert(it, pair<int, string>(1, "b"));
+	//myMap.insert(it, pair<int, string>(6, "n"));
+	//myMap.insert(it, pair<int, string>(3, "l"));
+	//myMap.insert(it, pair<int, string>(9, "k"));
+	//myMap.insert(it, pair<int, string>(4, "g"));
 
-	it = myMap.begin();
+	//it = myMap.begin();
 
-	cout << myMap.lower_bound(2)->first << '\t' << myMap.lower_bound(2)->second << '\n';
-	cout << myMap.upper_bound(9)->first << '\t' << myMap.upper_bound(9)->second << '\n';*/
+	//cout << myMap.lower_bound(2)->first << '\t' << myMap.lower_bound(2)->second << '\n';
+	//cout << myMap.upper_bound(9)->first << '\t' << myMap.upper_bound(9)->second << '\n';
 
 	//while (it != myMap.end())
 	//{
